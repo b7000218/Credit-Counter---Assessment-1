@@ -546,7 +546,6 @@
             // 
             this.textBox_Credit_Cost.Location = new System.Drawing.Point(232, 44);
             this.textBox_Credit_Cost.Name = "textBox_Credit_Cost";
-            this.textBox_Credit_Cost.ReadOnly = true;
             this.textBox_Credit_Cost.Size = new System.Drawing.Size(67, 20);
             this.textBox_Credit_Cost.TabIndex = 22;
             this.textBox_Credit_Cost.Text = "0";
@@ -614,6 +613,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Money Counter v1.0";
             this.groupBox_Coins_Entered.ResumeLayout(false);
             this.groupBox_Coins_Entered.PerformLayout();
