@@ -23,6 +23,7 @@ namespace Credit_Counter
                 MessageBox.Show("Error! Please enter a credit cost above 0");
                 CostofCredit = Convert.ToInt32(My_Dialogs.InputBox("Please enter a credit cost above '0'.")); // The user is prompted until they input a valid integer.
             }
+            MessageBox.Show("If you wish alter this field once the program starts, use the restart button. your current 'number of credits' will be reset to '0'.");
             MessageBox.Show("Welcome to the Credit Counter!");
             textBox_Credit_Cost.Text = CostofCredit.ToString(); // Once validated, the loop ends and their value is inputted into the relevant textbox.
 
@@ -185,5 +186,18 @@ namespace Credit_Counter
             textBox_Credit_Counter.Text = Credits.ToString();
         }
 
+        private void btn_Restart_Click(object sender, EventArgs e)
+        {
+            int CreditCounter = Convert.ToInt32(textBox_Credit_Cost.Text);
+            CreditCounter = 0;
+
+            int TotalPence = 0;
+
+            double TotalPounds = 0.00;
+
+            textBox_Credit_Counter.Text = CreditCounter.ToString();
+            textBox_Total_Pence_Value.Text = TotalPence.ToString();
+            textBox_Total_Pounds_Value.Text = TotalPounds.ToString(); // The above resets previously used variables to default values of 0 and inputs the into their respective boxes, to reset program progress.
+        }
     }
 }

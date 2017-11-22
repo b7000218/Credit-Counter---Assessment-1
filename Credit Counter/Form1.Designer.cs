@@ -592,6 +592,7 @@
             // btn_Restart
             // 
             this.btn_Restart.BackColor = System.Drawing.Color.White;
+            this.btn_Restart.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btn_Restart.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Restart.Location = new System.Drawing.Point(134, 556);
             this.btn_Restart.Name = "btn_Restart";
@@ -599,6 +600,7 @@
             this.btn_Restart.TabIndex = 3;
             this.btn_Restart.Text = "RESTART";
             this.btn_Restart.UseVisualStyleBackColor = false;
+            this.btn_Restart.Click += new System.EventHandler(this.btn_Restart_Click);
             // 
             // Form1
             // 
