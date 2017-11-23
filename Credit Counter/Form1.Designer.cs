@@ -111,7 +111,7 @@
             this.groupBox_Coins_Entered.Controls.Add(this.btn_1p);
             this.groupBox_Coins_Entered.Location = new System.Drawing.Point(454, 2);
             this.groupBox_Coins_Entered.Name = "groupBox_Coins_Entered";
-            this.groupBox_Coins_Entered.Size = new System.Drawing.Size(201, 649);
+            this.groupBox_Coins_Entered.Size = new System.Drawing.Size(201, 641);
             this.groupBox_Coins_Entered.TabIndex = 0;
             this.groupBox_Coins_Entered.TabStop = false;
             this.groupBox_Coins_Entered.Text = "Coins Entered";
@@ -369,9 +369,9 @@
             this.groupBox_Coins.Controls.Add(this.btn_5p_Buy);
             this.groupBox_Coins.Controls.Add(this.btn_1p_Buy);
             this.groupBox_Coins.Controls.Add(this.label_Buy_Credits);
-            this.groupBox_Coins.Location = new System.Drawing.Point(10, 2);
+            this.groupBox_Coins.Location = new System.Drawing.Point(2, 2);
             this.groupBox_Coins.Name = "groupBox_Coins";
-            this.groupBox_Coins.Size = new System.Drawing.Size(438, 327);
+            this.groupBox_Coins.Size = new System.Drawing.Size(446, 327);
             this.groupBox_Coins.TabIndex = 1;
             this.groupBox_Coins.TabStop = false;
             this.groupBox_Coins.Text = "Coins";
@@ -521,7 +521,7 @@
             // 
             this.label_Buy_Credits.AutoSize = true;
             this.label_Buy_Credits.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Buy_Credits.Location = new System.Drawing.Point(38, 26);
+            this.label_Buy_Credits.Location = new System.Drawing.Point(72, 19);
             this.label_Buy_Credits.Name = "label_Buy_Credits";
             this.label_Buy_Credits.Size = new System.Drawing.Size(283, 32);
             this.label_Buy_Credits.TabIndex = 0;
@@ -535,9 +535,9 @@
             this.groupBox_Credits.Controls.Add(this.label_Credits_Display);
             this.groupBox_Credits.Controls.Add(this.label_Credit_Cost_Total);
             this.groupBox_Credits.Controls.Add(this.label_Credit_Cost);
-            this.groupBox_Credits.Location = new System.Drawing.Point(10, 335);
+            this.groupBox_Credits.Location = new System.Drawing.Point(2, 335);
             this.groupBox_Credits.Name = "groupBox_Credits";
-            this.groupBox_Credits.Size = new System.Drawing.Size(438, 195);
+            this.groupBox_Credits.Size = new System.Drawing.Size(446, 195);
             this.groupBox_Credits.TabIndex = 2;
             this.groupBox_Credits.TabStop = false;
             this.groupBox_Credits.Text = "Credits";
@@ -549,6 +549,7 @@
             this.textBox_Credit_Cost.Size = new System.Drawing.Size(67, 20);
             this.textBox_Credit_Cost.TabIndex = 22;
             this.textBox_Credit_Cost.Text = "0";
+            this.textBox_Credit_Cost.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_Credit_Cost_KeyPress);
             // 
             // textBox_Credit_Counter
             // 
