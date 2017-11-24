@@ -7,25 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MyDialogs; // initialises the 'My Dialogs' class, for inputbox control.
 
 namespace Credit_Counter
 {
-    public partial class Form1 : Form
+    public partial class MoneyCounter : Form
     {
-        public Form1()
+        public MoneyCounter()
 
         {
             InitializeComponent();
-            int CostofCredit = Convert.ToInt32(My_Dialogs.InputBox("Please enter a credit cost, above '0'.")); // When the program runs, the user is prompted to enter their chosen credit cost.
-            while (CostofCredit <= 0) // This begins a loop, if the entered cost is 0 or below.
-            {
-                MessageBox.Show("Error! Please enter a credit cost above 0");
-                CostofCredit = Convert.ToInt32(My_Dialogs.InputBox("Please enter a credit cost above '0'.")); // The user is prompted until they input a valid integer.
-            }
-            MessageBox.Show("If you wish alter this field once the program starts, use the restart button. your current 'number of credits' will be reset to '0'.");
-            MessageBox.Show("Welcome to the Credit Counter!");
-            textBox_Credit_Cost.Text = CostofCredit.ToString(); // Once validated, the loop ends and their value is inputted into the relevant textbox.
+            MessageBox.Show("Welcome to the Credit Counter. If you wish to edit the cost of credits, please press the restart button first."); // When the program runs, the user is greeted with this welcome message, which also provides functionality advice.
         }
 
         private void btn_1p_Buy_Click(object sender, EventArgs e)
@@ -37,25 +28,25 @@ namespace Credit_Counter
             {
                 MessageBox.Show("You must set a credit cost higher than 0!");
             }
-                else
-                {
+            else // The rest of the code executes if all is valid.
+            {
 
-                    int OnePenceCount = int.Parse(label_OnePenceCount.Text);
-                    OnePenceCount++;
-                    label_OnePenceCount.Text = OnePenceCount.ToString(); //This sequence of code simply increments the coin counter by one with each click, to represent how many the user has selected. The code, with the exception of variable names and output targets, is uniform for each coin.
+                int OnePenceCount = int.Parse(label_OnePenceCount.Text);
+                OnePenceCount++;
+                label_OnePenceCount.Text = OnePenceCount.ToString(); //This sequence of code simply increments the coin counter by one with each click, to represent how many the user has selected. The code, with the exception of variable names and output targets, is uniform for each coin.
 
-                    int OnePenceValue = int.Parse(textBox_Total_Pence_Value.Text);
-                    OnePenceValue++;
-                    textBox_Total_Pence_Value.Text = OnePenceValue.ToString(); //This adds up the value of the coin, in this case, 1 pence, and adds it to the total pence value selected so far. The code works in the same way for the rest of the coins.
+                int OnePenceValue = int.Parse(textBox_Total_Pence_Value.Text);
+                OnePenceValue++;
+                textBox_Total_Pence_Value.Text = OnePenceValue.ToString(); //This adds up the value of the coin, in this case, 1 pence, and adds it to the total pence value selected so far. The code works in the same way for the rest of the coins.
 
-                    double OnePenceValue_InPounds = double.Parse(textBox_Total_Pounds_Value.Text);
-                    OnePenceValue_InPounds = OnePenceValue_InPounds + 0.01;
-                    textBox_Total_Pounds_Value.Text = OnePenceValue_InPounds.ToString(); //This adds the value of the coin too, but this time in pounds and pence, a decimal figure. It is then displayed in an appropriate textbox.
+                double OnePenceValue_InPounds = double.Parse(textBox_Total_Pounds_Value.Text);
+                OnePenceValue_InPounds = OnePenceValue_InPounds + 0.01;
+                textBox_Total_Pounds_Value.Text = OnePenceValue_InPounds.ToString(); //This adds the value of the coin too, but this time in pounds and pence, a decimal figure. It is then displayed in an appropriate textbox.
 
-                    int CreditCount = Convert.ToInt32(textBox_Credit_Cost.Text);
-                    int Credits = OnePenceValue / CreditCount;
-                    textBox_Credit_Counter.Text = Credits.ToString(); // This creates a new integer out of the user specified credit cost, and divides that by the total in pence to give an amount of current credits.
-                }
+                int CreditCount = Convert.ToInt32(textBox_Credit_Cost.Text);
+                int Credits = OnePenceValue / CreditCount;
+                textBox_Credit_Counter.Text = Credits.ToString(); // This creates a new integer out of the user specified credit cost, and divides that by the total in pence to give an amount of current credits.
+            }
 
         }
 
@@ -301,5 +292,6 @@ namespace Credit_Counter
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar); // To prevent the user from inputting string into the textbox, this categorises keys which are not numeric as 'illegal input' and simply does not enter them.
         }
+
     }
 }

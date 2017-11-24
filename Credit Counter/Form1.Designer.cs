@@ -1,6 +1,6 @@
 ﻿namespace Credit_Counter
 {
-    partial class Form1
+    partial class MoneyCounter
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MoneyCounter));
             this.groupBox_Coins_Entered = new System.Windows.Forms.GroupBox();
             this.label_TwoPoundCount = new System.Windows.Forms.Label();
             this.label_OnePoundCount = new System.Windows.Forms.Label();
@@ -77,6 +77,7 @@
             this.label_Credit_Cost_Total = new System.Windows.Forms.Label();
             this.label_Credit_Cost = new System.Windows.Forms.Label();
             this.btn_Restart = new System.Windows.Forms.Button();
+            this.btn_Exit = new System.Windows.Forms.Button();
             this.groupBox_Coins_Entered.SuspendLayout();
             this.groupBox_Coins.SuspendLayout();
             this.groupBox_Credits.SuspendLayout();
@@ -595,7 +596,7 @@
             this.btn_Restart.BackColor = System.Drawing.Color.White;
             this.btn_Restart.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btn_Restart.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Restart.Location = new System.Drawing.Point(134, 556);
+            this.btn_Restart.Location = new System.Drawing.Point(126, 566);
             this.btn_Restart.Name = "btn_Restart";
             this.btn_Restart.Size = new System.Drawing.Size(175, 56);
             this.btn_Restart.TabIndex = 3;
@@ -603,21 +604,33 @@
             this.btn_Restart.UseVisualStyleBackColor = false;
             this.btn_Restart.Click += new System.EventHandler(this.btn_Restart_Click);
             // 
-            // Form1
+            // btn_Exit
+            // 
+            this.btn_Exit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btn_Exit.Location = new System.Drawing.Point(0, 0);
+            this.btn_Exit.Name = "btn_Exit";
+            this.btn_Exit.Size = new System.Drawing.Size(75, 23);
+            this.btn_Exit.TabIndex = 0;
+            // 
+            // MoneyCounter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
+            this.CancelButton = this.btn_Exit;
             this.ClientSize = new System.Drawing.Size(653, 640);
+            this.Controls.Add(this.btn_Exit);
             this.Controls.Add(this.btn_Restart);
             this.Controls.Add(this.groupBox_Credits);
             this.Controls.Add(this.groupBox_Coins);
             this.Controls.Add(this.groupBox_Coins_Entered);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "Form1";
+            this.Name = "MoneyCounter";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Money Counter v1.0";
+            this.Text = "Money Counter v2.0";
             this.groupBox_Coins_Entered.ResumeLayout(false);
             this.groupBox_Coins_Entered.PerformLayout();
             this.groupBox_Coins.ResumeLayout(false);
@@ -678,6 +691,7 @@
         private System.Windows.Forms.Label label_TwoPenceCount;
         private System.Windows.Forms.Button btn_Two_Pound_Buy;
         private System.Windows.Forms.TextBox textBox_Credit_Cost;
+        private System.Windows.Forms.Button btn_Exit;
     }
 }
 
